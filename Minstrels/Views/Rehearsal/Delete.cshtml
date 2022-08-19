@@ -1,0 +1,42 @@
+﻿@model Rehearsal
+
+
+<h1>Are you sure you want to Delete</h1>
+
+<form method="post" asp-action="Delete" enctype="multipart/form-data">
+    <input type="hidden" value="AddressId" id="AddressId" />
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <input asp-for="Description" class="form-control">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Address.Street" class="form-label">Street</label>
+        <input asp-for="Address.Street" class="form-control">
+        <span asp-validation-for="Address.Street"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Address.City" class="form-label">City</label>
+        <input asp-for="Address.City" class="form-control">
+        <span asp-validation-for="Address.City"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Address.State" class="form-label">State</label>
+        <input asp-for="Address.State" class="form-control">
+        <span asp-validation-for="Address.State"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Image</label>
+        <input asp-for="Image" type="file" class="form-control">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+</form>
+
+<div class="mb-3">
+    <form action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Confirm" class="btn btn-danger float-right mt-3" />
+    </form>
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Rehearsal>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var Rehearsal in Model)
+            {
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="@Rehearsal.Image" class="card-img-top" width="100%" height="225" alt="Card image cap" />
+                        <div class="card-body">
+                            <p class="card-text">@Rehearsal.Description</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Rehearsal" asp-action="Detail" asp-route-id="@Rehearsal.Id">View</a>
+                                        <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Rehearsal" asp-action="Edit" asp-route-id="@Rehearsal.Id">Edit</a>
+                                        <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Rehearsal" asp-action="Delete" asp-route-id="@Rehearsal.Id">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
