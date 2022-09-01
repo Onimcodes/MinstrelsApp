@@ -8,5 +8,6 @@ namespace Minstrels.ViewModels
         public string Description { get; set; }
         public IFormFile Image { get; set; }
         public Address Address { get; set; }
+        public DateTime DateAndTime { get; set; }   
     }
 }
